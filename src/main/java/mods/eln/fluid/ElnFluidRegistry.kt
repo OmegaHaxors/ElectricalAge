@@ -16,5 +16,5 @@ enum class ElnFluidRegistry(
 ) {
     //name(Material,Color,Density,Viscosity, luminosity, isGaseous, isBucktable),
     hot_water(Material.water,4644607, 1000, 1000, 0, 333, false, true),
-    cold_water(Material.water,4644607, 1000, 1000, 0, 288, false, true)
+    cold_water(Material.water,4644607, 1000, 1000, 0, 278, false, true)
 }

@@ -182,23 +182,33 @@ class ThermalHeatExchangerElement(
 
         if (ic2hotcoolant != null && ic2coolant != null) {
             //println("IC2 Coolant Enabled in Thermal Heat Exchanger")
-            thermalPairs.add(ThermalPairing(ic2coolant, ic2hotcoolant, -640.0 / 7.0, 9, 1.0, false, minTemp = 300.0))
-            thermalPairs.add(ThermalPairing(ic2hotcoolant, ic2coolant, 640.0 / 7.0, 9, 1.0, false))
+            thermalPairs.add(ThermalPairing(ic2hotcoolant, ic2coolant, 640.0 / 7.0, 9, 1.0, false, maxTemp= 300.0))
+            thermalPairs.add(ThermalPairing(ic2coolant, ic2hotcoolant, -640.0 / 7.0, 9, 1.0, false, minTemp= 300.0))
         }
 
         if (ic2hotwater != null) {
-            thermalPairs.add(ThermalPairing(ic2hotwater,FluidRegistry.WATER,
-                1 / 0.45 / 2, //Joules per mB
-                36, //max mB input rate
-                1.0, //ratio
-                false,//reversible?
-                minTemp = 26.85,
-                maxTemp = 76.85))
+            thermalPairs.add(ThermalPairing(ic2hotwater,FluidRegistry.WATER,138.138/36.0,36,1.0,false,maxTemp = 60.0))
         }
 
-        if (steam != null) {
+
+        // maxtemp is the heat value which must be higher than to do a conversion
+        // mintemp is the heat value which must be less than to do a conversion
+        if (steam != null && hotwater != null) {
             //println("Steam Enabled in Thermal Heat Exchanger")
-            thermalPairs.add(ThermalPairing(FluidRegistry.WATER, steam, -1/0.45, 36,10.0, false, minTemp = 100.0))
+            thermalPairs.add(ThermalPairing(hotwater, steam, -167.440/36, 36,10.0, false, minTemp = 100.0))
+            // old value was -1/0.45 (-2.222)
+            // now it's -4.65 and -3.83 = -8.488 (3.8197x more)
+            //increase steam output from 10x to 38x to compensate?
+            //for whatever reason this seems to be over-unity? How?? It's worse than before!
+        }
+
+        if (hotwater != null) {
+            thermalPairs.add(ThermalPairing(hotwater,FluidRegistry.WATER, 138.138/36.0,36,1.0,false,maxTemp = 60.0))
+            thermalPairs.add(ThermalPairing(FluidRegistry.WATER,hotwater, -138.138/36.0,36,1.0,false,minTemp = 60.0))
+        }
+        if (coldwater != null) {
+            thermalPairs.add(ThermalPairing(FluidRegistry.WATER,coldwater, 87.906/36.0,36,1.0,false,minTemp = 4.85))
+            thermalPairs.add(ThermalPairing(coldwater,FluidRegistry.WATER, -87.906/36.0,36,1.0,false,maxTemp = 4.85))
         }
 
         thermalPairs.forEach {
