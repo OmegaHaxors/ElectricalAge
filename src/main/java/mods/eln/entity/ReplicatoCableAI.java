@@ -113,7 +113,7 @@ public class ReplicatoCableAI extends EntityAIBase implements ITimeRemoverObserv
         if (distance < 2) {
             //Utils.println("replicator on cable !");
             double u = cable.electricalLoad.getU();
-            double nextRp = Math.pow(u / Eln.LVU, -0.3) * u * u / (50);
+            double nextRp = Math.pow(u / Eln.LVU, -0.3) * u * u / (50) / 50;
             if (resistorLoad.getR() < 0.8 * nextRp) {
                 entity.attackEntityFrom(DamageSource.magic, 5);
             } else {

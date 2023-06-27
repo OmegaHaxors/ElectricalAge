@@ -24,7 +24,7 @@ public class ReplicatorEntity extends EntityMob {
     boolean isSpawnedFromWeather = false;
     double hungerTime = 10 * 60;
     double hungerToEnergy = 10.0 * hungerTime;
-    double energyToDuplicate = 10000;
+    double energyToDuplicate = 10000; //previously 10,000
     double hungerToDuplicate = -energyToDuplicate / hungerToEnergy;
     double hungerToCanibal = 0.6;
 

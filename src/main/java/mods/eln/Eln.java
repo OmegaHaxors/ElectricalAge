@@ -988,6 +988,7 @@ public class Eln {
         recipeMagnetizer();
         recipeFuelBurnerItem();
         recipeDisplays();
+        recipeReplicator();
 
         recipeECoal();
 
@@ -4089,7 +4090,7 @@ public class Eln {
             name = TR_NAME(Type.NONE, "Copper Dust");
             element = new GenericItemUsingDamageDescriptorWithComment(name,// iconId,
                 // name,
-                new String[]{});
+                new String[]{"Redstone which has lost all of its power.","You could probably coax power back into it, somehow"});
             dustCopper = element;
             sharedItem.addElement(completId, element);
             Data.addResource(element.newItemStack());
@@ -4102,7 +4103,9 @@ public class Eln {
             name = TR_NAME(Type.NONE, "Iron Dust");
             element = new GenericItemUsingDamageDescriptorWithComment(name,// iconId,
                 // name,
-                new String[]{});
+                new String[]{"The dust of a simple and staple metal; famous for being used by everything, and for everything.",
+                    "It's the most abundant metal in the earth, but you'd never know that with how most modpacks balance things.",
+                    "The fact you went out of your way to make so much of this is how I know you're playing one of those modpacks."});
             dustCopper = element;
             sharedItem.addElement(completId, element);
             Data.addResource(element.newItemStack());
@@ -4115,7 +4118,7 @@ public class Eln {
             name = TR_NAME(Type.NONE, "Lapis Dust");
             element = new GenericItemUsingDamageDescriptorWithComment(name,// iconId,
                 // name,
-                new String[]{});
+                new String[]{"Life would be so much less interesting if solar panels didn't require so much of this stuff."});
             dustCopper = element;
             sharedItem.addElement(completId, element);
             Data.addResource(element.newItemStack());
@@ -4128,7 +4131,7 @@ public class Eln {
             name = TR_NAME(Type.NONE, "Diamond Dust");
             element = new GenericItemUsingDamageDescriptorWithComment(name,// iconId,
                 // name,
-                new String[]{});
+                new String[]{"Final Fantasy reference"});
             dustCopper = element;
             sharedItem.addElement(completId, element);
             Data.addResource(element.newItemStack());
@@ -4142,7 +4145,7 @@ public class Eln {
 
             element = new GenericItemUsingDamageDescriptorWithComment(name,// iconId,
                 // name,
-                new String[]{});
+                new String[]{"Could be used as an artificial sweetener, if only it wasn't so valuable."});
             sharedItem.addElement(id, element);
             Data.addResource(element.newItemStack());
             addToOre("dustLead", element.newItemStack());
@@ -4154,7 +4157,7 @@ public class Eln {
 
             element = new GenericItemUsingDamageDescriptorWithComment(name,// iconId,
                 // name,
-                new String[]{});
+                new String[]{"Doesn't seem too useful on its own. Maybe you could blend it in with other dusts."});
             sharedItem.addElement(id, element);
             Data.addResource(element.newItemStack());
             addToOre(dictTungstenDust, element.newItemStack());
@@ -4166,7 +4169,7 @@ public class Eln {
             name = TR_NAME(Type.NONE, "Gold Dust");
 
             element = new GenericItemUsingDamageDescriptorWithComment(
-                name, new String[]{});
+                name, new String[]{"Its beautiful luster makes you wonder why Emeralds ended up being used for trade."});
             sharedItem.addElement(id, element);
             Data.addResource(element.newItemStack());
             addToOre("dustGold", element.newItemStack());
@@ -4179,7 +4182,7 @@ public class Eln {
 
             element = new GenericItemUsingDamageDescriptorWithComment(name,// iconId,
                 // name,
-                new String[]{});
+                new String[]{"Smells like burning... Don't breathe this!"});
             sharedItem.addElement(id, element);
             Data.addResource(element.newItemStack());
             addToOre("dustCoal", element.newItemStack());
@@ -4191,7 +4194,7 @@ public class Eln {
 
             element = new GenericItemUsingDamageDescriptorWithComment(name,// iconId,
                 // name,
-                new String[]{});
+                new String[]{"Will it blend? That is the question."});
             sharedItem.addElement(id, element);
             Data.addResource(element.newItemStack());
             addToOre("dustAlloy", element.newItemStack());
@@ -4204,10 +4207,25 @@ public class Eln {
 
             element = new GenericItemUsingDamageDescriptorWithComment(name,// iconId,
                 // name,
-                new String[]{});
+                new String[]{"Legends say it will one day be given a use."});
             sharedItem.addElement(id, element);
             Data.addResource(element.newItemStack());
             addToOre("dustCinnabar", element.newItemStack());
+        }
+
+        {
+            id = 88;
+
+            name = TR_NAME(Type.NONE, "Replicator Essence");
+
+            element = new GenericItemUsingDamageDescriptorWithComment(name,// iconId,
+                // name,
+                new String[]{"A highly entropic proto-material of unknown origin which seems express a desire to endlessly replicate.",
+                    "You can either help it in its empty quest or offer it the structure that it truly wanted all along."});
+
+            sharedItem.addElement(id, element);
+            Data.addResource(element.newItemStack());
+            addToOre("gemMimichite", element.newItemStack());
         }
 
     }
@@ -4228,7 +4246,7 @@ public class Eln {
             name = TR_NAME(Type.NONE, "Copper Ingot");
             element = new GenericItemUsingDamageDescriptorWithComment(name,// iconId,
                 // name,
-                new String[]{});
+                new String[]{"An extremely conductive and easy-to-work metal.","Apparently made for great frying pans."});
             sharedItem.addElement(completId, element);
             // GameRegistry.registerCustomItemStack(name,
             // element.newItemStack(1));
@@ -4244,7 +4262,7 @@ public class Eln {
             name = TR_NAME(Type.NONE, "Lead Ingot");
             element = new GenericItemUsingDamageDescriptorWithComment(name,// iconId,
                 // name,
-                new String[]{});
+                new String[]{"It has a sweet taste to it, but it's far too valuable to nibble at."});
             sharedItem.addElement(completId, element);
             // GameRegistry.registerCustomItemStack(name,
             // element.newItemStack(1));
@@ -4261,7 +4279,7 @@ public class Eln {
             name = TR_NAME(Type.NONE, "Tungsten Ingot");
             element = new GenericItemUsingDamageDescriptorWithComment(name,// iconId,
                 // name,
-                new String[]{});
+                new String[]{"Why is its element symbol a W? Nobody really knows.","It probably stands for 'Wow! This furnace sure is fast!'"});
             sharedItem.addElement(completId, element);
             // GameRegistry.registerCustomItemStack(name,
             // element.newItemStack(1));
@@ -4293,7 +4311,7 @@ public class Eln {
             name = TR_NAME(Type.NONE, "Alloy Ingot");
             element = new GenericItemUsingDamageDescriptorWithComment(name,// iconId,
                 // name,
-                new String[]{});
+                new String[]{"Nobody knows what alloy it's even supposed to be, only that it's really effective."});
             sharedItem.addElement(completId, element);
             // GameRegistry.registerCustomItemStack(name,
             // element.newItemStack(1));
@@ -7752,6 +7770,10 @@ public class Eln {
             new ItemStack[]{findItemStack("Arc Metal Ingot", 1)}, 1.0 * f));
         arcFurnaceRecipes.addRecipe(new Recipe(findItemStack("Canister of Water", 1),
             new ItemStack[]{findItemStack("Canister of Arc Water", 1)}, 7000000)); //hardcoded 7MJ to prevent overunity
+        arcFurnaceRecipes.addRecipe(new Recipe(findItemStack("Replicator Essence", 1),
+            new ItemStack[]{findItemStack("Replicator Essence", 2)},1000000)); //same as the cost of duplicating a replicator
+
+
     }
 
     private void recipeMaceratorModOres() {
@@ -8515,6 +8537,40 @@ public class Eln {
         );
     }
 
+    private void recipeReplicator() {
+        addRecipe(new ItemStack(Items.redstone,2),
+            "d",
+            "e",
+            'd', new ItemStack(Items.redstone),
+            'e', findItemStack("Replicator Essence")
+        );
+        addRecipe(new ItemStack(Items.glowstone_dust,2),
+            "d",
+            "e",
+            'd', new ItemStack(Items.glowstone_dust),
+            'e', findItemStack("Replicator Essence")
+        );
+        addRecipe(findItemStack("Iron Dust",2),
+            " d",
+            "ee",
+            'd', findItemStack("Iron Dust"),
+            'e', findItemStack("Replicator Essence")
+        );
+        addRecipe(findItemStack("Copper Dust",2),
+            "d",
+            "e",
+            'd', findItemStack("Copper Dust"),
+            'e', findItemStack("Replicator Essence")
+        );
+        addRecipe(findItemStack("Gold Dust",2),
+            " d ",
+            "eee",
+            " e ",
+            'd', findItemStack("Gold Dust"),
+            'e', findItemStack("Replicator Essence")
+        );
+    }
+
     private int replicatorRegistrationId = -1;
 
     private void registerReplicator() {
@@ -8527,11 +8583,12 @@ public class Eln {
         // Register mob
         EntityRegistry.registerGlobalEntityID(ReplicatorEntity.class, TR_NAME(Type.ENTITY, "EAReplicator"), replicatorRegistrationId, redColor, orangeColor);
 
-        ReplicatorEntity.dropList.add(findItemStack("Iron Dust", 1));
+        ReplicatorEntity.dropList.add(findItemStack("Replicator Essence", 1));
+        /*ReplicatorEntity.dropList.add(findItemStack("Iron Dust", 1));
         ReplicatorEntity.dropList.add(findItemStack("Copper Dust", 1));
         ReplicatorEntity.dropList.add(findItemStack("Gold Dust", 1));
         ReplicatorEntity.dropList.add(new ItemStack(Items.redstone));
-        ReplicatorEntity.dropList.add(new ItemStack(Items.glowstone_dust));
+        ReplicatorEntity.dropList.add(new ItemStack(Items.glowstone_dust));*/
         // Add mob spawn
         // EntityRegistry.addSpawn(ReplicatorEntity.class, 1, 1, 2, EnumCreatureType.monster, BiomeGenBase.plains);
 
